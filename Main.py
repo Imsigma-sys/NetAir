@@ -17,7 +17,7 @@ if shutil.which("toilet") is None:
     yn = input("Do you want to install toilet package?(its just for the banner) (y/n): ")
     if yn.lower() == 'y':
         try:
-            subprocess.run(["pip", "install", "toilet"], check=True)
+            subprocess.run(["sudo","pacman","-S", "toilet"], check=True)
             print("Toilet package installed successfully.")
         except subprocess.CalledProcessError:
             print("Failed to install toilet package. Please install it manually.")
